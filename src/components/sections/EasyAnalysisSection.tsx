@@ -28,8 +28,9 @@ export const EasyAnalysisSection: React.FC = () => {
             <span className="text-[#f2df79]">Analysis</span>
           </h2>
           <p className="text-white/90 text-lg mt-4 max-w-2xl mx-auto">
-            Instant clarity on the Masters' profile. Get a snapshot of their
-            trade history, profitability, risk, and portfolio all in one place.
+            Instant clarity on the Masters&apos; profile. Get a snapshot of
+            their trade history, profitability, risk, and portfolio all in one
+            place.
           </p>
         </div>
 

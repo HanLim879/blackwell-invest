@@ -36,7 +36,7 @@ export const FastMatchingSection: React.FC = () => {
             <p className="text-lg leading-relaxed text-white/90">
               Zero in on your ideal Master effortlessly. Sort by performance and
               drawdown levels or discover opportunities from new signals with
-              our smart filters. Still can't decide? Simply head over to
+              our smart filters. Still can&apos;t decide? Simply head over to
               Spotlight for quality signals curated by us.
             </p>
 

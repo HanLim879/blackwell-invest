@@ -58,8 +58,10 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
       // Close modal
       onClose();
-    } catch (error: any) {
-      toast.error(error.message || "Login failed. Please try again.");
+    } catch (error: unknown) {
+      toast.error(
+        (error as Error).message || "Login failed. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -106,7 +108,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
       <div className="text-center mt-4">
         <p className="text-gray-600">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <button
             type="button"
             onClick={onSwitchToSignup}

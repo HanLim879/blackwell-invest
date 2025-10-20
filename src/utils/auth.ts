@@ -13,7 +13,7 @@ export interface SignupData {
     password: string;
   }
   
-  export const signupUser = (data: SignupData): Promise<any> => {
+  export const signupUser = (data: SignupData): Promise<SignupData> => {
     return new Promise((resolve, reject) => {
       // Simulate API call
       setTimeout(() => {
@@ -37,7 +37,7 @@ export interface SignupData {
     });
   };
   
-  export const loginUser = (data: LoginData): Promise<any> => {
+  export const loginUser = (data: LoginData): Promise<SignupData> => {
     return new Promise((resolve, reject) => {
       // Simulate API call
       setTimeout(() => {

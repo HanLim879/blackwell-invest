@@ -11,41 +11,29 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
   const { user, isAuthenticated, clearUser } = useUserStore();
   const [timeLeft, setTimeLeft] = useState({
-    days: 27,
-    hours: 23,
-    minutes: 45,
-    seconds: 7,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
   });
 
-  // Countdown timer logic
+  // Countdown to next midnight (00:00:00) local time
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        let { days, hours, minutes, seconds } = prev;
+    const updateCountdown = () => {
+      const now = new Date();
+      const nextMidnight = new Date(now);
+      nextMidnight.setHours(24, 0, 0, 0); // today 24:00 == tomorrow 00:00
+      const diffMs = nextMidnight.getTime() - now.getTime();
 
-        if (seconds > 0) {
-          seconds--;
-        } else {
-          seconds = 59;
-          if (minutes > 0) {
-            minutes--;
-          } else {
-            minutes = 59;
-            if (hours > 0) {
-              hours--;
-            } else {
-              hours = 23;
-              if (days > 0) {
-                days--;
-              }
-            }
-          }
-        }
+      const totalSeconds = Math.max(0, Math.floor(diffMs / 1000));
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
 
-        return { days, hours, minutes, seconds };
-      });
-    }, 1000);
+      setTimeLeft({ hours, minutes, seconds });
+    };
 
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -70,12 +58,8 @@ export const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
             />
           </div>
 
-          {/* Countdown Timer */}
+          {/* Countdown Timer to 00:00:00 */}
           <div className="hidden md:flex items-center gap-2 text-white font-mono text-xl">
-            <span className="bg-white/20 px-3 py-1 rounded">
-              {formatNumber(timeLeft.days)}
-            </span>
-            <span>:</span>
             <span className="bg-white/20 px-3 py-1 rounded">
               {formatNumber(timeLeft.hours)}
             </span>

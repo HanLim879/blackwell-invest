@@ -73,8 +73,10 @@ export const SignupModal: React.FC<SignupModalProps> = ({
 
       // Close modal
       onClose();
-    } catch (error: any) {
-      toast.error(error.message || "Registration failed. Please try again.");
+    } catch (error: unknown) {
+      toast.error(
+        (error as Error).message || "Registration failed. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }

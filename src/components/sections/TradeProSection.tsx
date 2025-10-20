@@ -1,15 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
+import React from "react";
+import Image from "next/image";
 
 export const TradeProSection: React.FC = () => {
   const steps = [
     {
       number: 1,
       title: 'Install our app, "Blackwell Invest"',
-      image: '/images/phones/app-store-listing.png',
+      image: "/images/phones/app-store-listing.png",
     },
     {
       number: 2,
@@ -18,13 +17,13 @@ export const TradeProSection: React.FC = () => {
     },
     {
       number: 3,
-      title: 'Set your trade size preferences',
-      image: '/images/phones/trade-settings.png',
+      title: "Set your trade size preferences",
+      image: "/images/phones/trade-settings.png",
     },
     {
       number: 4,
       title: 'Click "Agree and Copy"',
-      image: '/images/phones/copy-agreement.png',
+      image: "/images/phones/copy-agreement.png",
     },
   ];
 
@@ -72,14 +71,14 @@ export const TradeProSection: React.FC = () => {
         {/* App Store Buttons */}
         <div className="flex justify-center gap-4 mt-12 flex-wrap">
           <Image
-            src="/images/badges/app-store.png"
+            src="/images/badges/app-store.jpg"
             alt="App Store"
             width={150}
             height={50}
             className="cursor-pointer hover:scale-105 transition-transform"
           />
           <Image
-            src="/images/badges/google-play.png"
+            src="/images/badges/google-play.jpg"
             alt="Google Play"
             width={150}
             height={50}

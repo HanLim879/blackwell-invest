@@ -8,7 +8,7 @@ export interface ValidationResult {
     return emailRegex.test(email);
   };
   
-  export const validateSignup = (data: any): ValidationResult => {
+  export const validateSignup = (data: Record<string, string>): ValidationResult => {
     const errors: Record<string, string> = {};
   
     if (!data.firstName?.trim()) {
@@ -51,7 +51,7 @@ export interface ValidationResult {
     };
   };
   
-  export const validateLogin = (data: any): ValidationResult => {
+  export const validateLogin = (data: Record<string, string>): ValidationResult => {
     const errors: Record<string, string> = {};
   
     if (!data.email?.trim()) {

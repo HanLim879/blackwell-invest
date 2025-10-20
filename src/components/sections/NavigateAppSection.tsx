@@ -98,14 +98,14 @@ export const NavigateAppSection: React.FC = () => {
         {/* App Store Buttons */}
         <div className="flex justify-center gap-4 mt-12 flex-wrap">
           <Image
-            src="/images/badges/app-store.png"
+            src="/images/badges/app-store.jpg"
             alt="App Store"
             width={150}
             height={50}
             className="cursor-pointer hover:scale-105 transition-transform"
           />
           <Image
-            src="/images/badges/google-play.png"
+            src="/images/badges/google-play.jpg"
             alt="Google Play"
             width={150}
             height={50}
