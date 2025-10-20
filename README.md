@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blackwell Invest - Professional Trading Platform
+
+This is a [Next.js](https://nextjs.org) project for a professional trading platform with advanced analysis tools and fast matching technology.
+
+## Font Configuration
+
+The application uses custom fonts with comprehensive fallbacks to ensure it runs smoothly even without the custom font files:
+
+- **Title Font**: ATRotisSemiSans-ExtraBold with fallbacks to Arial Black, Helvetica Neue, Arial
+- **Subtitle Font**: ATRotisSemiSans-Light with fallbacks to Helvetica Neue, Helvetica, Arial
+- **Body Font**: System fonts (-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial)
+
+All fonts use `font-display: swap` for optimal loading performance.
 
 ## Getting Started
 
